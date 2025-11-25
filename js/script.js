@@ -7,7 +7,7 @@ const products = [
         id: 1,
         name: "iPhone 15 Pro Max",
         category: "eletronicos",
-        price: "1.200.000 Kz",
+        price: "60.000 MT",
         image: "https://images.unsplash.com/photo-1695048133142-1a20484d2569?auto=format&fit=crop&q=80&w=800",
         description: "Titânio, A17 Pro, o iPhone mais poderoso de sempre."
     },
@@ -15,7 +15,7 @@ const products = [
         id: 2,
         name: "MacBook Pro M3",
         category: "eletronicos",
-        price: "2.500.000 Kz",
+        price: "30.000 MT",
         image: "https://images.unsplash.com/photo-1517336714731-489689fd1ca4?auto=format&fit=crop&q=80&w=800",
         description: "Desempenho extremo para profissionais."
     },
@@ -23,7 +23,7 @@ const products = [
         id: 3,
         name: "T-Shirt Premium Black",
         category: "roupas",
-        price: "15.000 Kz",
+        price: "15.000 MT",
         image: "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&q=80&w=800",
         description: "Algodão egípcio, corte slim fit."
     },
@@ -31,7 +31,7 @@ const products = [
         id: 4,
         name: "Casaco Bomber",
         category: "roupas",
-        price: "45.000 Kz",
+        price: "45.000 MT",
         image: "https://images.unsplash.com/photo-1591047139829-d91aecb6caea?auto=format&fit=crop&q=80&w=800",
         description: "Estilo urbano e conforto para o dia a dia."
     },
@@ -39,7 +39,7 @@ const products = [
         id: 5,
         name: "Tesla Model S",
         category: "carros",
-        price: "85.000.000 Kz",
+        price: "85.000.000 MT",
         image: "https://images.unsplash.com/photo-1617788138017-80ad40651399?auto=format&fit=crop&q=80&w=800",
         description: "Elétrico, autonomia de 600km, 0-100 em 2s."
     },
@@ -47,7 +47,7 @@ const products = [
         id: 6,
         name: "Mercedes AMG GT",
         category: "carros",
-        price: "120.000.000 Kz",
+        price: "120.000.000 MT",
         image: "https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?auto=format&fit=crop&q=80&w=800",
         description: "Potência bruta e luxo alemão."
     },
@@ -55,7 +55,7 @@ const products = [
         id: 7,
         name: "Sony Headphones XM5",
         category: "eletronicos",
-        price: "350.000 Kz",
+        price: "35.000 MT",
         image: "https://images.unsplash.com/photo-1618366712010-f4ae9c647dcb?auto=format&fit=crop&q=80&w=800",
         description: "Cancelamento de ruído líder da indústria."
     },
@@ -63,7 +63,7 @@ const products = [
         id: 8,
         name: "Relógio Smart Ultra",
         category: "eletronicos",
-        price: "80.000 Kz",
+        price: "80.000 MT",
         image: "https://images.unsplash.com/photo-1579586337278-3befd40fd17a?auto=format&fit=crop&q=80&w=800",
         description: "Monitoramento de saúde 24/7."
     }
