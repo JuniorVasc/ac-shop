@@ -201,6 +201,7 @@ if (mobileBtn && nav) { // Verifica se ambos os elementos existem
 }
 
 // Scroll Animations
+// Scroll Animations
 function setupScrollAnimations() {
     const observerOptions = {
         threshold: 0.1
@@ -216,19 +217,22 @@ function setupScrollAnimations() {
         el.classList.add('hidden');
         observer.observe(el);
     });
+}
 
-    // Typing Effect
+// Typing Effect
+function setupTypingEffect() {
     const textToType = "tudo em um só lugar.";
     const typeTargetSpan = document.querySelector('.highlight');
     let charIndex = 0;
 
     function typeText() {
         if (charIndex < textToType.length) {
-            typeTargetSpan.textContent = textToType.substring(0, charIndex);
+            typeTargetSpan.textContent = textToType.substring(0, charIndex + 1);
             charIndex++;
             setTimeout(typeText, 100);
         } else {
-            charIndex = 0; // Reset for potential re-animation
+            // Optional: Reset to loop
+            // setTimeout(() => { charIndex = 0; typeText(); }, 2000);
         }
     }
 
@@ -238,28 +242,31 @@ function setupScrollAnimations() {
         typeTargetSpan.classList.add('typing-cursor');
         setTimeout(typeText, 1000); // Start after 1s
     }
+}
 
-    // Configuração inicial ao carregar a página
-    window.addEventListener('load', handleAnimationSetup);
-
-    // Reavalia a configuração da animação ao redimensionar a janela (com debounce)
-    let resizeTimeout;
-    window.addEventListener('resize', () => {
-        clearTimeout(resizeTimeout);
-        resizeTimeout = setTimeout(handleAnimationSetup, 250);
-    });
-
-    // Check screen width and apply or disable scroll animations
-    function checkScreenWidth() {
-        // Only run animations on screens wider than 768px
-        if (window.innerWidth > 768) {
-            setupScrollAnimations();
-        } else {
-            // On smaller screens, remove animation classes to prevent elements from being hidden
-            document.querySelectorAll('.animate-on-scroll').forEach((el) => {
-                el.classList.remove('hidden');
-            });
-        }
+// Check screen width and apply or disable scroll animations
+function checkScreenWidth() {
+    // Only run animations on screens wider than 768px
+    if (window.innerWidth > 768) {
+        setupScrollAnimations();
+    } else {
+        // On smaller screens, remove animation classes to prevent elements from being hidden
+        document.querySelectorAll('.animate-on-scroll').forEach((el) => {
+            el.classList.remove('hidden');
+            el.classList.add('show'); // Ensure they are shown
+        });
     }
+}
 
-    window.addEventListener('load', checkScreenWidth);
+// Initialize Animations and Responsive Logic
+window.addEventListener('load', () => {
+    checkScreenWidth();
+    setupTypingEffect();
+});
+
+// Re-check on resize
+let resizeTimeout;
+window.addEventListener('resize', () => {
+    clearTimeout(resizeTimeout);
+    resizeTimeout = setTimeout(checkScreenWidth, 250);
+});
