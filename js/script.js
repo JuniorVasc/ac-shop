@@ -15,9 +15,9 @@ const products = [
         id: 2,
         name: "HP 14s",
         category: "eletronicos",
-        price: "15.000 MT", // Renomeado para hp-14s.jpg
+        price: "15.000 MT",
         image: "img/hp-14s.jpg",
-        description: "Processador: AMD Athlon solver 3050U with Radeon Graphics, 8GB ram, 256GB NVME,14 inch, HDMI,type-c,3-USB, SD, Teclado autónomo, Bactéria 🔋 incluindo carregador original     "
+        description: "Processador: AMD Athlon solver 3050U with Radeon Graphics, 8GB ram, 256GB NVME,14 inch, HDMI,type-c,3-USB, SD, Teclado autónomo, Bactéria 🔋 incluindo carregador original"
     },
     {
         id: 3,
@@ -31,9 +31,9 @@ const products = [
         id: 4,
         name: "TV spring",
         category: "eletronicos",
-        price: "7.200 MT", // Renomeado para jbl-tune.jpeg
+        price: "7.200 MT",
         image: "img/tv-spring.jpg",
-        description: "32 polegadas, Smart TV. HD   "
+        description: "32 polegadas, Smart TV. HD"
     },
     {
         id: 5,
@@ -47,7 +47,7 @@ const products = [
         id: 6,
         name: "Sapatilhas NIKE AIR MAX 90",
         category: "Vestuário",
-        price: "1.850 MT", // Renomeado para nike.jpeg
+        price: "1.850 MT",
         image: "img/nike.jpeg",
         description: "Estilo urbano e conforto para o dia a dia."
     },
@@ -55,9 +55,9 @@ const products = [
         id: 7,
         name: "Toyota Hiace",
         category: "carros",
-        price: "920.000MT", // Renomeado para toyota-hiace.jpg
+        price: "920.000MT",
         image: "img/toyota-hiace.jpg",
-        description: "Inspeção, 130.000km, Service Feito, Peneus novos,AC, Vidros trocados 4, Automático, Extintores, Imposto e iva 15 lugares, cadeiras 13, Aparelho multimidia Smart, macaco  ."
+        description: "Inspeção, 130.000km, Service Feito, Peneus novos,AC, Vidros trocados 4, Automático, Extintores, Imposto e iva 15 lugares, cadeiras 13, Aparelho multimidia Smart, macaco."
     },
     {
         id: 8,
@@ -67,7 +67,6 @@ const products = [
         image: "https://images.unsplash.com/photo-1581591546163-a6e9bf7ce12d?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
         description: "PS3 950MT, Personalizado 2000MT, PS5 5000MT"
     },
-
     {
         id: 9,
         name: "Capas de Airpods",
@@ -80,9 +79,9 @@ const products = [
         id: 10,
         name: "JBL tune",
         category: "eletronicos",
-        price: "850 MT", // Renomeado para jbl-tune.jpeg
+        price: "850 MT",
         image: "img/jbl-tune.jpeg",
-        description: "Som sem fios, com estilo!  "
+        description: "Som sem fios, com estilo!"
     },
     {
         id: 11,
@@ -96,7 +95,7 @@ const products = [
         id: 12,
         name: "CHINELOS LUOFU",
         category: "Vestuário",
-        price: "950 MT", // Renomeado para chinelos-luofu.jpeg
+        price: "950 MT",
         image: "img/chinelos-luofu.jpeg",
         description: "Estilo urbano e conforto para o dia a dia."
     },
@@ -104,7 +103,7 @@ const products = [
         id: 13,
         name: "Chinelos Adidas Originais",
         category: "Vestuário",
-        price: "900 MT", // Renomeado para adidas-chinelo.jpeg
+        price: "900 MT",
         image: "img/adidas-chinelo.jpeg",
         description: "Estilo urbano e conforto para o dia a dia."
     },
@@ -115,24 +114,32 @@ const products = [
         price: "950 MT",
         image: "img/camisas1.jpg",
         description: "Elegância e Estilosas"
-    },
-
+    }
 ];
 
-// DOM Elements
+// --- DOM ELEMENTS ---
 const productsGrid = document.getElementById('products-grid');
 const filterBtns = document.querySelectorAll('.filter-btn');
+const searchInput = document.getElementById('search-input');
+const backToTopBtn = document.getElementById('back-to-top');
 
-// Initialize
+// --- INITIALIZATION ---
 document.addEventListener('DOMContentLoaded', () => {
     renderProducts(products);
     setupFilters();
+    setupSearch();
+    setupBackToTop();
 });
 
-// Render Products
+// --- RENDER PRODUCTS ---
 function renderProducts(items) {
+    if (items.length === 0) {
+        productsGrid.innerHTML = '<p class="no-results">Nenhum produto encontrado.</p>';
+        return;
+    }
+
     productsGrid.innerHTML = items.map(product => `
-        <div class="product-card" data-product-name="${product.name}" data-product-price="${product.price}">
+        <div class="product-card" data-id="${product.id}">
             <div class="product-image">
                 <img src="${product.image}" alt="${product.name}" loading="lazy">
             </div>
@@ -141,7 +148,7 @@ function renderProducts(items) {
                 <h3 class="product-title">${product.name}</h3>
                 <p class="product-description">${product.description}</p>
                 <span class="product-price">${product.price}</span>
-                <button class="btn-buy">
+                <button class="btn-buy" onclick="buyOnWhatsApp('${product.name.replace(/'/g, "\\'")}', '${product.price}')">
                     <i class="fab fa-whatsapp"></i> Comprar Agora
                 </button>
             </div>
@@ -149,29 +156,39 @@ function renderProducts(items) {
     `).join('');
 }
 
-// WhatsApp Redirect using Event Delegation
-productsGrid.addEventListener('click', function (e) {
-    if (e.target.classList.contains('btn-buy')) {
-        const card = e.target.closest('.product-card');
-        const name = card.dataset.productName;
-        const price = card.dataset.productPrice;
-        const message = `Olá! Gostaria de comprar o seguinte produto:\n\n*Produto:* ${name}\n*Preço:* ${price}\n\nAguardo confirmação.`;
-        const encodedMessage = encodeURIComponent(message);
-        const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodedMessage}`;
-        window.open(url, '_blank', 'noopener,noreferrer');
-    }
-});
+// --- DIRECT WHATSAPP BUY ---
+function buyOnWhatsApp(name, price) {
+    const message = `Olá! Gostaria de comprar o seguinte produto:\n\n*Produto:* ${name}\n*Preço:* ${price}\n\nAguardo confirmação.`;
+    const encodedMessage = encodeURIComponent(message);
+    const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodedMessage}`;
+    window.open(url, '_blank', 'noopener,noreferrer');
+}
 
-// Filter Logic
+// --- SEARCH LOGIC ---
+function setupSearch() {
+    if (!searchInput) return;
+
+    searchInput.addEventListener('input', (e) => {
+        const searchTerm = e.target.value.toLowerCase();
+        const filtered = products.filter(product =>
+            product.name.toLowerCase().includes(searchTerm) ||
+            product.description.toLowerCase().includes(searchTerm) ||
+            product.category.toLowerCase().includes(searchTerm)
+        );
+        renderProducts(filtered);
+    });
+}
+
+// --- FILTER LOGIC ---
 function setupFilters() {
     filterBtns.forEach(btn => {
         btn.addEventListener('click', () => {
-            // Remove active class from all
             filterBtns.forEach(b => b.classList.remove('active'));
-            // Add active to clicked
             btn.classList.add('active');
-
             const category = btn.getAttribute('data-filter');
+
+            // Reset search when filtering
+            if (searchInput) searchInput.value = '';
 
             if (category === 'all') {
                 renderProducts(products);
@@ -183,16 +200,35 @@ function setupFilters() {
     });
 }
 
-// Mobile Menu Toggle
+// --- BACK TO TOP LOGIC ---
+function setupBackToTop() {
+    if (!backToTopBtn) return;
+
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 300) {
+            backToTopBtn.classList.add('visible');
+        } else {
+            backToTopBtn.classList.remove('visible');
+        }
+    });
+
+    backToTopBtn.addEventListener('click', () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
+}
+
+// --- MOBILE MENU ---
 const mobileBtn = document.querySelector('.mobile-menu-btn');
 const nav = document.querySelector('.nav');
 
-if (mobileBtn && nav) { // Verifica se ambos os elementos existem
+if (mobileBtn && nav) {
     mobileBtn.addEventListener('click', () => {
-        nav.classList.toggle('active'); // Apenas alterna a classe 'active'
+        nav.classList.toggle('active');
     });
 
-    // Fecha o menu móvel ao clicar em um link
     nav.querySelectorAll('a').forEach(link => {
         link.addEventListener('click', () => {
             nav.classList.remove('active');
@@ -200,13 +236,9 @@ if (mobileBtn && nav) { // Verifica se ambos os elementos existem
     });
 }
 
-// Scroll Animations
-// Scroll Animations
+// --- ANIMATIONS ---
 function setupScrollAnimations() {
-    const observerOptions = {
-        threshold: 0.1
-    };
-
+    const observerOptions = { threshold: 0.1 };
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) entry.target.classList.add('show');
@@ -219,52 +251,42 @@ function setupScrollAnimations() {
     });
 }
 
-// Typing Effect
 function setupTypingEffect() {
     const textToType = "tudo em um só lugar.";
     const typeTargetSpan = document.querySelector('.highlight');
-    let charIndex = 0;
+    if (!typeTargetSpan) return;
 
+    let charIndex = 0;
     function typeText() {
         if (charIndex < textToType.length) {
             typeTargetSpan.textContent = textToType.substring(0, charIndex + 1);
             charIndex++;
             setTimeout(typeText, 100);
-        } else {
-            // Optional: Reset to loop
-            // setTimeout(() => { charIndex = 0; typeText(); }, 2000);
         }
     }
 
-    // Clear text initially and start typing when page loads
-    if (typeTargetSpan) {
-        typeTargetSpan.textContent = "";
-        typeTargetSpan.classList.add('typing-cursor');
-        setTimeout(typeText, 1000); // Start after 1s
-    }
+    typeTargetSpan.textContent = "";
+    typeTargetSpan.classList.add('typing-cursor');
+    setTimeout(typeText, 1000);
 }
 
-// Check screen width and apply or disable scroll animations
 function checkScreenWidth() {
-    // Only run animations on screens wider than 768px
     if (window.innerWidth > 768) {
         setupScrollAnimations();
     } else {
-        // On smaller screens, remove animation classes to prevent elements from being hidden
         document.querySelectorAll('.animate-on-scroll').forEach((el) => {
             el.classList.remove('hidden');
-            el.classList.add('show'); // Ensure they are shown
+            el.classList.add('show');
         });
     }
 }
 
-// Initialize Animations and Responsive Logic
+// Initialize Animations
 window.addEventListener('load', () => {
     checkScreenWidth();
     setupTypingEffect();
 });
 
-// Re-check on resize
 let resizeTimeout;
 window.addEventListener('resize', () => {
     clearTimeout(resizeTimeout);
