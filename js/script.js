@@ -16,7 +16,7 @@ const products = [
         name: "HP 14s",
         category: "eletronicos",
         price: "15.000 MT", // Renomeado para hp-14s.jpg
-        image: "./img/adidas/hp-14s.jpg",
+        image: "./img/hp-14s.jpg",
         description: "Processador: AMD Athlon solver 3050U with Radeon Graphics, 8GB ram, 256GB NVME,14 inch, HDMI,type-c,3-USB, SD, Teclado autónomo, Bactéria 🔋 incluindo carregador original     "
     },
     {
@@ -24,7 +24,7 @@ const products = [
         name: "Adidas",
         category: "Vestuário",
         price: "1.850MT",
-        image: "./img/adidas/adidas.jpeg",
+        image: "./img/adidas.jpeg",
         description: "Algodão egípcio, corte slim fit."
     },
     {
@@ -32,7 +32,7 @@ const products = [
         name: "Sapatilhas NIKE AIR MAX 90",
         category: "Vestuário",
         price: "1.850 MT", // Renomeado para nike.jpeg
-        image: "./img/adidas/nike.jpeg",
+        image: "./img/nike.jpeg",
         description: "Estilo urbano e conforto para o dia a dia."
     },
     {
@@ -40,7 +40,7 @@ const products = [
         name: "Toyota Hiace",
         category: "carros",
         price: "920.000MT", // Renomeado para toyota-hiace.jpg
-        image: "./img/adidas/toyota-hiace.jpg",
+        image: "./img/toyota-hiace.jpg",
         description: "Inspeção, 130.000km, Service Feito, Peneus novos,AC, Vidros trocados 4, Automático, Extintores, Imposto e iva 15 lugares, cadeiras 13, Aparelho multimidia Smart, macaco  ."
     },
     {
@@ -64,7 +64,7 @@ const products = [
         name: "JBL tune",
         category: "eletronicos",
         price: "850 MT", // Renomeado para jbl-tune.jpeg
-        image: "./img/adidas/jbl-tune.jpeg",
+        image: "./img/jbl-tune.jpeg",
         description: "Som sem fios, com estilo!  "
     },
       {
@@ -72,7 +72,7 @@ const products = [
         name: "CAMISETA PREMIUM",
         category: "Vestuário",
         price: "850 MT",
-        image: "./img/adidas/versace.jpeg",
+        image: "./img/versace.jpeg",
         description: "Estilo urbano e conforto para o dia a dia."
     },
     {
@@ -80,7 +80,7 @@ const products = [
         name: "CHINELOS LUOFU",
         category: "Vestuário",
         price: "950 MT", // Renomeado para chinelos-luofu.jpeg
-        image: "./img/adidas/chinelos-luofu.jpeg",
+        image: "./img/chinelos-luofu.jpeg",
         description: "Estilo urbano e conforto para o dia a dia."
     },
     {
@@ -88,7 +88,7 @@ const products = [
         name: "Chinelos Adidas Originais",
         category: "Vestuário",
         price: "900 MT", // Renomeado para adidas-chinelo.jpeg
-        image: "./img/adidas/adidas-chinelo.jpeg",
+        image: "./img/adidas-chinelo.jpeg",
         description: "Estilo urbano e conforto para o dia a dia."
     },
       {
@@ -96,7 +96,7 @@ const products = [
         name: "Camisas",
         category: "Vestuário",
         price: "950 MT",
-        image: "./img/adidas/camisas1.jpg",
+        image: "./img/camisas1.jpg",
         description: "Elegância e Estilosas"
     },
 
