@@ -21,6 +21,22 @@ const products = [
     },
     {
         id: 3,
+        name: "Dell latitude 5490",
+        category: "eletronicos",
+        price: "15.200 MT", 
+        image: "./img/dell-latitude.jpeg",
+        description: "8th geração, Intel(r)Core i5-8250U CPU @ 1.80Hz, 8GB Ram, 256BG SSD, 14 inch, HDMI typr-c.3-usb.sd, teclado autónimo"
+    },
+     {
+        id: 9,
+        name: "TV spring",
+        category: "eletronicos",
+        price: "7.200 MT", // Renomeado para jbl-tune.jpeg
+        image: "./img/tv-spring.jpg",
+        description: "32 polegadas, Smart TV. HD   "
+    },
+    {
+        id: 4,
         name: "Adidas",
         category: "Vestuário",
         price: "1.850MT",
@@ -28,7 +44,7 @@ const products = [
         description: "Algodão egípcio, corte slim fit."
     },
     {
-        id: 4,
+        id: 5,
         name: "Sapatilhas NIKE AIR MAX 90",
         category: "Vestuário",
         price: "1.850 MT", // Renomeado para nike.jpeg
@@ -36,7 +52,7 @@ const products = [
         description: "Estilo urbano e conforto para o dia a dia."
     },
     {
-        id: 5,
+        id: 6,
         name: "Toyota Hiace",
         category: "carros",
         price: "920.000MT", // Renomeado para toyota-hiace.jpg
@@ -44,15 +60,16 @@ const products = [
         description: "Inspeção, 130.000km, Service Feito, Peneus novos,AC, Vidros trocados 4, Automático, Extintores, Imposto e iva 15 lugares, cadeiras 13, Aparelho multimidia Smart, macaco  ."
     },
     {
-        id: 6,
+        id: 7,
         name: "Joystick PS4",
         category: "eletronicos",
-        price: "1500MT",
+        price: "1.500MT",
         image: "https://images.unsplash.com/photo-1581591546163-a6e9bf7ce12d?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
         description: "PS3 950MT, Personalizado 2000MT, PS5 5000MT"
     },
+
     {
-        id: 7,
+        id: 8,
         name: "Capas de Airpods",
         category: "eletronicos",
         price: "250 MT",
@@ -60,7 +77,7 @@ const products = [
         description: "Cancelamento de ruído líder da indústria."
     },
     {
-        id: 8,
+        id: 9,
         name: "JBL tune",
         category: "eletronicos",
         price: "850 MT", // Renomeado para jbl-tune.jpeg
@@ -68,7 +85,7 @@ const products = [
         description: "Som sem fios, com estilo!  "
     },
       {
-        id: 9,
+        id: 10,
         name: "CAMISETA PREMIUM",
         category: "Vestuário",
         price: "850 MT",
@@ -76,7 +93,7 @@ const products = [
         description: "Estilo urbano e conforto para o dia a dia."
     },
     {
-        id: 10,
+        id: 11,
         name: "CHINELOS LUOFU",
         category: "Vestuário",
         price: "950 MT", // Renomeado para chinelos-luofu.jpeg
@@ -84,7 +101,7 @@ const products = [
         description: "Estilo urbano e conforto para o dia a dia."
     },
     {
-        id: 11,
+        id: 12,
         name: "Chinelos Adidas Originais",
         category: "Vestuário",
         price: "900 MT", // Renomeado para adidas-chinelo.jpeg
@@ -92,7 +109,7 @@ const products = [
         description: "Estilo urbano e conforto para o dia a dia."
     },
       {
-        id: 12,
+        id: 13,
         name: "Camisas",
         category: "Vestuário",
         price: "950 MT",
