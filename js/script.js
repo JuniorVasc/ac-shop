@@ -5,68 +5,101 @@ const WHATSAPP_NUMBER = "258876446317"; // Updated to user's number
 const products = [
     {
         id: 1,
-        name: "iPhone 15 Pro Max",
+        name: "iPhone 12",
         category: "eletronicos",
-        price: "60.000 MT",
-        image: "https://images.unsplash.com/photo-1695048133142-1a20484d2569?auto=format&fit=crop&q=80&w=800",
-        description: "Titânio, A17 Pro, o iPhone mais poderoso de sempre."
+        price: "21.000MT",
+        image: "https://images.unsplash.com/photo-1611472173362-3f53dbd65d80?q=80&w=704&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        description: "128GB, Bateria 95%"
     },
     {
         id: 2,
-        name: "MacBook Pro M3",
+        name: "HP 14s",
         category: "eletronicos",
-        price: "30.000 MT",
-        image: "https://images.unsplash.com/photo-1517336714731-489689fd1ca4?auto=format&fit=crop&q=80&w=800",
-        description: "Desempenho extremo para profissionais."
+        price: "15.000 MT",
+        image: "./img/adidas/HP 14S.jpg",
+        description: "Processador: AMD Athlon solver 3050U with Radeon Graphics, 8GB ram, 256GB NVME,14 inch, HDMI,type-c,3-USB, SD, Teclado autónomo, Bactéria 🔋 incluindo carregador original     "
     },
     {
         id: 3,
-        name: "T-Shirt Premium Black",
-        category: "roupas",
-        price: "15.000 MT",
-        image: "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&q=80&w=800",
+        name: "Adidas",
+        category: "Vestuário",
+        price: "1.850MT",
+        image: "./img/adidas/adidas.jpeg",
         description: "Algodão egípcio, corte slim fit."
     },
     {
         id: 4,
-        name: "Casaco Bomber",
-        category: "roupas",
-        price: "45.000 MT",
-        image: "https://images.unsplash.com/photo-1591047139829-d91aecb6caea?auto=format&fit=crop&q=80&w=800",
+        name: "Sapatilhas NIKE AIR MAX 90",
+        category: "Vestuário",
+        price: "1.850 MT",
+        image: "./img/adidas/Nike.jpeg",
         description: "Estilo urbano e conforto para o dia a dia."
     },
     {
         id: 5,
-        name: "Tesla Model S",
+        name: "Toyota Hiace",
         category: "carros",
-        price: "85.000.000 MT",
-        image: "https://images.unsplash.com/photo-1617788138017-80ad40651399?auto=format&fit=crop&q=80&w=800",
-        description: "Elétrico, autonomia de 600km, 0-100 em 2s."
+        price: "920.000MT",
+        image: "./img/adidas/toyota Hiace.jpg",
+        description: "Inspeção, 130.000km, Service Feito, Peneus novos,AC, Vidros trocados 4, Automático, Extintores, Imposto e iva 15 lugares, cadeiras 13, Aparelho multimidia Smart, macaco  ."
     },
     {
         id: 6,
-        name: "Mercedes AMG GT",
-        category: "carros",
-        price: "120.000.000 MT",
-        image: "https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?auto=format&fit=crop&q=80&w=800",
-        description: "Potência bruta e luxo alemão."
+        name: "Joystick PS4",
+        category: "eletronicos",
+        price: "1500MT",
+        image: "https://images.unsplash.com/photo-1581591546163-a6e9bf7ce12d?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        description: "PS3 950MT, Personalizado 2000MT, PS5 5000MT"
     },
     {
         id: 7,
-        name: "Sony Headphones XM5",
+        name: "Capas de Airpods",
         category: "eletronicos",
-        price: "35.000 MT",
-        image: "https://images.unsplash.com/photo-1618366712010-f4ae9c647dcb?auto=format&fit=crop&q=80&w=800",
+        price: "250 MT",
+        image: "https://cdn.pixabay.com/photo/2024/04/26/14/19/airpods-8721977_1280.jpg",
         description: "Cancelamento de ruído líder da indústria."
     },
     {
         id: 8,
-        name: "Relógio Smart Ultra",
+        name: "JBL tune",
         category: "eletronicos",
-        price: "80.000 MT",
-        image: "https://images.unsplash.com/photo-1579586337278-3befd40fd17a?auto=format&fit=crop&q=80&w=800",
-        description: "Monitoramento de saúde 24/7."
-    }
+        price: "850 MT",
+        image: "./img/adidas/JBL Tune.jpeg",
+        description: "Som sem fios, com estilo!  "
+    },
+      {
+        id: 9,
+        name: "CAMISETA PREMIUM",
+        category: "Vestuário",
+        price: "850 MT",
+        image: "./img/adidas/versace.jpeg",
+        description: "Estilo urbano e conforto para o dia a dia."
+    },
+    {
+        id: 10,
+        name: "CHINELOS LUOFU",
+        category: "Vestuário",
+        price: "950 MT",
+        image: "./img/adidas/chinelos Luofu.jpeg",
+        description: "Estilo urbano e conforto para o dia a dia."
+    },
+    {
+        id: 11,
+        name: "Chinelos Adidas Originais",
+        category: "Vestuário",
+        price: "900 MT",
+        image: "./img/adidas/Adidas chinelo.jpeg ",
+        description: "Estilo urbano e conforto para o dia a dia."
+    },
+      {
+        id: 12,
+        name: "Camisas",
+        category: "Vestuário",
+        price: "950 MT",
+        image: "./img/adidas/camisas1.jpg ",
+        description: "Elegância e Estilosas"
+    },
+
 ];
 
 // DOM Elements
@@ -82,30 +115,35 @@ document.addEventListener('DOMContentLoaded', () => {
 // Render Products
 function renderProducts(items) {
     productsGrid.innerHTML = items.map(product => `
-        <div class="product-card">
+        <div class="product-card" data-product-name="${product.name}" data-product-price="${product.price}">
             <div class="product-image">
                 <img src="${product.image}" alt="${product.name}" loading="lazy">
             </div>
             <div class="product-info">
                 <span class="product-category">${product.category}</span>
                 <h3 class="product-title">${product.name}</h3>
-                <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 1rem;">${product.description}</p>
+                <p class="product-description">${product.description}</p>
                 <span class="product-price">${product.price}</span>
-                <button class="btn-buy" onclick="buyProduct('${product.name}', '${product.price}')">
+                <button class="btn-buy">
                     <i class="fab fa-whatsapp"></i> Comprar Agora
                 </button>
             </div>
         </div>
     `).join('');
 }
-
-// WhatsApp Redirect
-window.buyProduct = function (name, price) {
-    const message = `Olá! Gostaria de comprar o seguinte produto:\n\n*Produto:* ${name}\n*Preço:* ${price}\n\nAguardo confirmação.`;
-    const encodedMessage = encodeURIComponent(message);
-    const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodedMessage}`;
-    window.open(url, '_blank');
-}
+ 
+// WhatsApp Redirect using Event Delegation
+productsGrid.addEventListener('click', function(e) {
+    if (e.target.classList.contains('btn-buy')) {
+        const card = e.target.closest('.product-card');
+        const name = card.dataset.productName;
+        const price = card.dataset.productPrice;
+        const message = `Olá! Gostaria de comprar o seguinte produto:\n\n*Produto:* ${name}\n*Preço:* ${price}\n\nAguardo confirmação.`;
+        const encodedMessage = encodeURIComponent(message);
+        const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodedMessage}`;
+        window.open(url, '_blank', 'noopener,noreferrer');
+    }
+});
 
 // Filter Logic
 function setupFilters() {
@@ -132,10 +170,16 @@ function setupFilters() {
 const mobileBtn = document.querySelector('.mobile-menu-btn');
 const nav = document.querySelector('.nav');
 
-if (mobileBtn) {
+if (mobileBtn && nav) { // Verifica se ambos os elementos existem
     mobileBtn.addEventListener('click', () => {
-        nav.style.display = nav.style.display === 'block' ? 'none' : 'block';
-        nav.classList.toggle('active');
+        nav.classList.toggle('active'); // Apenas alterna a classe 'active'
+    });
+
+    // Fecha o menu móvel ao clicar em um link
+    nav.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+            nav.classList.remove('active');
+        });
     });
 }
 
@@ -159,20 +203,22 @@ document.querySelectorAll('.animate-on-scroll').forEach((el) => {
 
 // Typing Effect
 const textToType = "tudo em um só lugar.";
-const typeTarget = document.querySelector('.highlight');
+const typeTargetSpan = document.querySelector('.highlight');
 let charIndex = 0;
 
 function typeText() {
     if (charIndex < textToType.length) {
-        typeTarget.textContent += textToType.charAt(charIndex);
+        typeTargetSpan.textContent = textToType.substring(0, charIndex);
         charIndex++;
         setTimeout(typeText, 100);
+    } else {
+        charIndex = 0; // Reset for potential re-animation
     }
 }
 
 // Clear text initially and start typing when page loads
-if (typeTarget) {
-    typeTarget.textContent = "";
-    typeTarget.classList.add('typing-cursor');
+if (typeTargetSpan) {
+    typeTargetSpan.textContent = "";
+    typeTargetSpan.classList.add('typing-cursor');
     setTimeout(typeText, 1000); // Start after 1s
 }

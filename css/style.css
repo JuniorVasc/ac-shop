@@ -1,6 +1,7 @@
 :root {
     --primary-color: #00F0FF;
     /* Cyan from logo */
+    --header-height: 80px; /* Altura do cabeçalho */
     --primary-dark: #00B8D4;
     --bg-color: #001233;
     /* Deep Blue from logo background */
@@ -19,10 +20,6 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-}
-
-html {
-    scroll-behavior: smooth;
 }
 
 body {
@@ -51,6 +48,7 @@ ul {
 /* Header */
 .header {
     background-color: rgba(0, 18, 51, 0.95);
+    -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
     position: fixed;
     top: 0;
@@ -65,7 +63,7 @@ ul {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 80px;
+    height: var(--header-height); /* Usando variável CSS */
 }
 
 .logo {
@@ -84,8 +82,9 @@ ul {
 /* Adicionado para organizar o menu */
 .nav {
     display: flex;
+    flex-grow: 1; /* Faz a navegação ocupar o espaço disponível */
+    justify-content: center; /* Centraliza a lista de links */
     align-items: center;
-    gap: 2rem; /* Espaçamento entre a lista de links e o botão */
 }
 
 
@@ -113,6 +112,7 @@ ul {
     padding: 0.8rem 2rem;
     border-radius: 50px;
     font-weight: 700;
+    transition: var(--transition); /* Adicionado para transição suave */
     display: inline-block;
     text-transform: uppercase;
     letter-spacing: 0.5px;
@@ -162,6 +162,7 @@ ul {
 
 .highlight {
     background: var(--gradient-1);
+    background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     display: inline-block;
@@ -186,6 +187,7 @@ ul {
 .floating-card {
     position: absolute;
     background: rgba(0, 40, 85, 0.8);
+    -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
     padding: 2rem;
     border-radius: 20px;
@@ -254,6 +256,11 @@ ul {
     margin-bottom: 4rem;
 }
 
+.section-header h2 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: var(--text-color);
+}
 .section-header h2 {
     font-size: 3rem;
     margin-bottom: 1rem;
@@ -358,6 +365,13 @@ ul {
     margin-bottom: 0.8rem;
     font-weight: 600;
 }
+.product-description {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+    line-height: 1.5;
+}
+
 
 .product-price {
     font-size: 1.5rem;
@@ -442,8 +456,9 @@ ul {
 
 /* Responsive */
 @media (max-width: 768px) {
-    .header-container {
-        padding: 0 1.5rem;
+    .hero {
+        padding-top: 120px; /* Reduz o espaçamento superior no mobile */
+        padding-bottom: 60px;
     }
 
     .hero-container {
@@ -464,15 +479,38 @@ ul {
         height: 350px;
     }
 
+    /* Ajusta os cartões flutuantes para mobile */
+    .floating-card {
+        width: 130px;
+        padding: 1rem;
+        animation: none; /* Remove a animação de flutuar para economizar recursos */
+        transform: translateY(0) !important;
+    }
+
+    .floating-card i {
+        font-size: 1.8rem;
+    }
+
+    .floating-card span {
+        font-size: 0.9rem;
+    }
+
+    /* Reposiciona os cartões para telas menores */
+    .card-2 {
+        top: 50%;
+        right: 0;
+    }
+
     /* Esconde o menu de navegação principal e mostra o botão do menu móvel */
     .nav {
         display: none; /* Esconde o menu por padrão */
         position: absolute;
-        top: 80px; /* Altura do header */
+        top: var(--header-height); /* Usando variável CSS */
         left: 0;
         right: 0;
         width: 100%;
         background: rgba(0, 18, 51, 0.98); /* Fundo com um pouco de transparência */
+        -webkit-backdrop-filter: blur(10px);
         backdrop-filter: blur(10px);
         padding: 1.5rem 2rem;
         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
@@ -495,14 +533,26 @@ ul {
         align-items: center; /* Centraliza os itens */
     }
 
+    /* Reduz o tamanho dos títulos das seções */
+    .section-header h2 {
+        font-size: 2.2rem;
+    }
+
+}
+
+/* Estilos para as novas classes do rodapé */
+.footer-copyright {
+    margin-top: 0; /* Resetar margin-top se houver */
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+.footer-developer {
+    font-size: 0.9em;
+    opacity: 0.8;
 }
 
 /* Tablet responsive styles */
 @media (max-width: 1024px) {
-    .hero-container {
-        grid-template-columns: 1fr;
-        gap: 2rem;
-    }
 
     .hero-content h1 {
         font-size: 3rem;
@@ -523,7 +573,6 @@ ul {
     .footer-container {
         grid-template-columns: 1fr;
     }
-}
 }
 
 /* Animations */
