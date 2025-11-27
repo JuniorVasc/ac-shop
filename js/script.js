@@ -35,8 +35,25 @@ const products = [
         image: "img/tv-spring.jpg",
         description: "32 polegadas, Smart TV. HD"
     },
-    {
+      {
         id: 5,
+        name: "Capas de Airpods",
+        category: "eletronicos",
+        price: "250 MT",
+        image: "https://cdn.pixabay.com/photo/2024/04/26/14/19/airpods-8721977_1280.jpg",
+        description: "Capas deAirpods por 250MT"
+    },
+    {
+        id: 6,
+        name: "Joystick PS4",
+        category: "eletronicos",
+        price: "1.500MT",
+        image: "https://images.unsplash.com/photo-1581591546163-a6e9bf7ce12d?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        description: "PS3 950MT, Personalizado 2000MT, PS5 5000MT"
+    },
+    
+    {
+        id: 7,
         name: "Adidas",
         category: "Vestuário",
         price: "1.850MT",
@@ -44,7 +61,7 @@ const products = [
         description: "Algodão egípcio, corte slim fit."
     },
     {
-        id: 6,
+        id: 8,
         name: "Sapatilhas NIKE AIR MAX 90",
         category: "Vestuário",
         price: "1.850 MT",
@@ -52,39 +69,18 @@ const products = [
         description: "Estilo urbano e conforto para o dia a dia."
     },
     {
-        id: 7,
+        id: 9,
         name: "Toyota Hiace",
         category: "carros",
         price: "920.000MT",
         image: "img/toyota-hiace.jpg",
         description: "Inspeção, 130.000km, Service Feito, Peneus novos,AC, Vidros trocados 4, Automático, Extintores, Imposto e iva 15 lugares, cadeiras 13, Aparelho multimidia Smart, macaco."
     },
-    {
-        id: 8,
-        name: "Joystick PS4",
-        category: "eletronicos",
-        price: "1.500MT",
-        image: "https://images.unsplash.com/photo-1581591546163-a6e9bf7ce12d?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-        description: "PS3 950MT, Personalizado 2000MT, PS5 5000MT"
-    },
-    {
-        id: 9,
-        name: "Capas de Airpods",
-        category: "eletronicos",
-        price: "250 MT",
-        image: "https://cdn.pixabay.com/photo/2024/04/26/14/19/airpods-8721977_1280.jpg",
-        description: "Cancelamento de ruído líder da indústria."
-    },
+    
+  
+    
     {
         id: 10,
-        name: "JBL tune",
-        category: "eletronicos",
-        price: "850 MT",
-        image: "img/jbl-tune.jpeg",
-        description: "Som sem fios, com estilo!"
-    },
-    {
-        id: 11,
         name: "CAMISETA PREMIUM",
         category: "Vestuário",
         price: "850 MT",
@@ -92,7 +88,7 @@ const products = [
         description: "Estilo urbano e conforto para o dia a dia."
     },
     {
-        id: 12,
+        id: 11,
         name: "CHINELOS LUOFU",
         category: "Vestuário",
         price: "950 MT",
@@ -100,7 +96,7 @@ const products = [
         description: "Estilo urbano e conforto para o dia a dia."
     },
     {
-        id: 13,
+        id: 12,
         name: "Chinelos Adidas Originais",
         category: "Vestuário",
         price: "900 MT",
@@ -108,7 +104,7 @@ const products = [
         description: "Estilo urbano e conforto para o dia a dia."
     },
     {
-        id: 14,
+        id: 13,
         name: "Camisas",
         category: "Vestuário",
         price: "950 MT",
