@@ -129,7 +129,27 @@ const products = [
         image: "img/adidas-wonder.jpg",
         description: "Elegância e Estilosas",
         onSale: false
-    }
+    },
+    {
+        id: 17,
+        name: "Louis Vuitton LV ",
+        category: "Vestuário",
+        price: "1.650 MT",
+        image: "img/sapatilhas-originais.jpeg",
+        description: "Elegância e Estilosas",
+        onSale: false
+    },
+    
+     {
+        id: 18,
+        name: "T-shirt Chelsea Original 2025-26 ",
+        category: "Vestuário",
+        price: "1.650 MT",
+        image: "img/chelsea.jpeg",
+        description: "Tamanhos disponíveis: S até XXL",
+        onSale: false
+    },
+    
 ];
 
 // --- DOM ELEMENTS ---
