@@ -1,5 +1,5 @@
 /* ===========================
-   SELO DE PROMOÇÃO - VERSÃO ELEGANTE E LIMPA
+   SELO DE PROMOÇÃO - VERSÃO OTIMIZADA
    =========================== */
 
 .promo-badge {
@@ -15,9 +15,10 @@
     letter-spacing: 0.5px;
     text-transform: uppercase;
     z-index: 10;
-    box-shadow: 0 3px 10px rgba(212, 20, 90, 0.35);
-    border: 2px solid rgba(255, 255, 255, 0.3);
-    transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    /* Sombra estática mais leve */
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    /* Removida transição complexa para performance */
 }
 
 .promo-badge::before {
@@ -25,10 +26,11 @@
     margin-right: 4px;
 }
 
-/* Hover suave */
-.product-card:hover .promo-badge {
-    transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(212, 20, 90, 0.5);
+/* Hover removido ou simplificado para mobile */
+@media (hover: hover) {
+    .product-card:hover .promo-badge {
+        transform: translateY(-1px);
+    }
 }
 
 /* Versão Desktop - um pouco maior */

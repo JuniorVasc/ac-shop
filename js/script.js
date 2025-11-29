@@ -128,7 +128,7 @@ const products = [
         price: "2.500 MT",
         image: "img/adidas-wonder.jpg",
         description: "Elegância e Estilosas",
-        onSale: true
+        onSale: false
     }
 ];
 
@@ -157,7 +157,7 @@ function renderProducts(items) {
         <div class="product-card" data-id="${product.id}">
             <div class="product-image">
                 ${product.onSale ? '<div class="promo-badge">PROMOÇÃO</div>' : ''}
-                <img src="${product.image}" alt="${product.name}" loading="lazy">
+                <img src="${product.image}" alt="${product.name}" loading="lazy" decoding="async">
             </div>
             <div class="product-info">
                 <span class="product-category">${product.category}</span>
@@ -247,7 +247,7 @@ if (mobileBtn && nav) {
     mobileBtn.addEventListener('click', () => {
         nav.classList.toggle('active');
         navOverlay.classList.toggle('active');
-        body.style.overflow = nav.classList.contains('active') ? 'hidden' : '';
+        body.classList.toggle('no-scroll', nav.classList.contains('active'));
 
         // Muda ícone do botão
         const icon = mobileBtn.querySelector('i');
@@ -260,7 +260,7 @@ if (mobileBtn && nav) {
         link.addEventListener('click', () => {
             nav.classList.remove('active');
             navOverlay.classList.remove('active');
-            body.style.overflow = '';
+            body.classList.remove('no-scroll');
             mobileBtn.querySelector('i').classList.replace('fa-times', 'fa-bars');
         });
     });
@@ -269,7 +269,7 @@ if (mobileBtn && nav) {
     navOverlay.addEventListener('click', () => {
         nav.classList.remove('active');
         navOverlay.classList.remove('active');
-        body.style.overflow = '';
+        body.classList.remove('no-scroll');
         mobileBtn.querySelector('i').classList.replace('fa-times', 'fa-bars');
     });
 
@@ -278,7 +278,7 @@ if (mobileBtn && nav) {
         if (e.key === 'Escape' && nav.classList.contains('active')) {
             nav.classList.remove('active');
             navOverlay.classList.remove('active');
-            body.style.overflow = '';
+            body.classList.remove('no-scroll');
             mobileBtn.querySelector('i').classList.replace('fa-times', 'fa-bars');
         }
     });
