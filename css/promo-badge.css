@@ -1,0 +1,41 @@
+/* ===========================
+   SELO DE PROMOÇÃO - VERSÃO ELEGANTE E LIMPA
+   =========================== */
+
+.promo-badge {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: linear-gradient(135deg, #D4145A 0%, #FBB03B 100%);
+    color: white;
+    padding: 6px 14px;
+    border-radius: 6px;
+    font-weight: 700;
+    font-size: 0.7rem;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    z-index: 10;
+    box-shadow: 0 3px 10px rgba(212, 20, 90, 0.35);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    transition: all 0.3s ease;
+}
+
+.promo-badge::before {
+    content: '🏷️ ';
+    margin-right: 4px;
+}
+
+/* Hover suave */
+.product-card:hover .promo-badge {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(212, 20, 90, 0.5);
+}
+
+/* Versão Desktop - um pouco maior */
+@media (min-width: 769px) {
+    .promo-badge {
+        font-size: 0.75rem;
+        padding: 8px 16px;
+        border-radius: 8px;
+    }
+}

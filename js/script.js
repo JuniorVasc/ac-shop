@@ -44,7 +44,7 @@ const products = [
         image: "img/tv-spring.jpg",
         description: "32 polegadas, Smart TV. HD"
     },
-      {
+    {
         id: 6,
         name: "Capas de Airpods",
         category: "eletronicos",
@@ -60,8 +60,8 @@ const products = [
         image: "https://images.unsplash.com/photo-1581591546163-a6e9bf7ce12d?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
         description: "PS3 950MT, Personalizado 2000MT, PS5 5000MT"
     },
-    
-    
+
+
     {
         id: 9,
         name: "Adidas",
@@ -86,9 +86,9 @@ const products = [
         image: "img/toyota-hiace.jpg",
         description: "Inspeção, 130.000km, Service Feito, Peneus novos,AC, Vidros trocados 4, Automático, Extintores, Imposto e iva 15 lugares, cadeiras 13, Aparelho multimidia Smart, macaco."
     },
-    
-  
-    
+
+
+
     {
         id: 12,
         name: "CAMISETA PREMIUM",
@@ -120,6 +120,15 @@ const products = [
         price: "950 MT",
         image: "img/camisas1.jpg",
         description: "Elegância e Estilosas"
+    },
+    {
+        id: 16,
+        name: "Adidas Wonder Runner Turbo",
+        category: "Vestuário",
+        price: "2.500 MT",
+        image: "img/adidas-wonder.jpg",
+        description: "Elegância e Estilosas",
+        onSale: true
     }
 ];
 
@@ -147,6 +156,7 @@ function renderProducts(items) {
     productsGrid.innerHTML = items.map(product => `
         <div class="product-card" data-id="${product.id}">
             <div class="product-image">
+                ${product.onSale ? '<div class="promo-badge">PROMOÇÃO</div>' : ''}
                 <img src="${product.image}" alt="${product.name}" loading="lazy">
             </div>
             <div class="product-info">
@@ -226,19 +236,51 @@ function setupBackToTop() {
     });
 }
 
-// --- MOBILE MENU ---
+// --- MOBILE MENU COM OVERLAY ---
 const mobileBtn = document.querySelector('.mobile-menu-btn');
 const nav = document.querySelector('.nav');
+const navOverlay = document.getElementById('nav-overlay');
+const body = document.body;
 
 if (mobileBtn && nav) {
+    // Toggle menu
     mobileBtn.addEventListener('click', () => {
         nav.classList.toggle('active');
+        navOverlay.classList.toggle('active');
+        body.style.overflow = nav.classList.contains('active') ? 'hidden' : '';
+
+        // Muda ícone do botão
+        const icon = mobileBtn.querySelector('i');
+        icon.classList.toggle('fa-bars');
+        icon.classList.toggle('fa-times');
     });
 
+    // Fecha menu ao clicar nos links
     nav.querySelectorAll('a').forEach(link => {
         link.addEventListener('click', () => {
             nav.classList.remove('active');
+            navOverlay.classList.remove('active');
+            body.style.overflow = '';
+            mobileBtn.querySelector('i').classList.replace('fa-times', 'fa-bars');
         });
+    });
+
+    // Fecha menu ao clicar no overlay
+    navOverlay.addEventListener('click', () => {
+        nav.classList.remove('active');
+        navOverlay.classList.remove('active');
+        body.style.overflow = '';
+        mobileBtn.querySelector('i').classList.replace('fa-times', 'fa-bars');
+    });
+
+    // Fecha menu com tecla ESC
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && nav.classList.contains('active')) {
+            nav.classList.remove('active');
+            navOverlay.classList.remove('active');
+            body.style.overflow = '';
+            mobileBtn.querySelector('i').classList.replace('fa-times', 'fa-bars');
+        }
     });
 }
 
